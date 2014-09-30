@@ -4,13 +4,13 @@ ember js starter package with custom Grunt build
 Everything past this section is the boilerplate starter kid verbiage.  Here is the meat and potatoes of the custom build set up.
 
 1.  In order to be able to build the application you need to have node.js, npm, and grunt-cli installed:
-  a. sudo apt-get install node
-  b. sudo ln -s `which nodejs` /usr/local/bin/node (if node -v does not work)
-  c. sudo apt-get install npm
-  d. sudo npm install -g grunt-cli (this installs all the packages listed in package.json)
-  e. npm install (at project root - if node_modules folder is there, then delete it before running)
-2.  You should have grunt installed now.  So type: "grunt watch" in order to have the dev build occur on every file change.
-    Type "grunt dev" to do a dev build, and "grunt prod" for a production build.
+  1. ````sudo apt-get install node````
+  2. ````sudo ln -s `which nodejs` /usr/local/bin/node```` (if ````node -v```` does not work)
+  3. ````sudo apt-get install npm````
+  4. ````sudo npm install -g grunt-cli```` (this installs all the packages listed in package.json)
+  5. ````npm install```` (at project root - if node_modules folder is there, then delete it before running)
+2.  You should have grunt installed now.  So type: ````grunt watch```` in order to have the dev build occur on every .js and .css file change.  You can customize the trigger in the Gruntfile.js or "tasks" folder.
+Type: ````grunt dev```` to do a dev build, and ````grunt prod```` for a production build.
 3.  You can see what each build process entails by checking out Gruntfile.js
 4.  Templates folder is where the handlebards templates go.  The build process will compile them and convert them into js.
 
