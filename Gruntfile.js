@@ -3,6 +3,7 @@ function config(name){
 }
 
 module.exports = function(grunt){
+	//set up configs
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		concat: config('concat'),
@@ -18,6 +19,7 @@ module.exports = function(grunt){
 		}
 	});
 
+	//set up tasks.  These are special npm modules designed to work with grunt.
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-ember-templates');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -26,6 +28,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 
+	//set up custom tasks.
 	grunt.registerTask('changeIndexDev', 'my dev task', function(){
 		var fs = require('fs');
 		var path = require('path');
@@ -35,10 +38,10 @@ module.exports = function(grunt){
 
 		if(fileContents.indexOf('<!-- PRODUCTION -->') !== -1){
 			grunt.log.error('Changing index.html over to dev resources');
-			fileContents = fileContents.replace('<!-- PRODUCTION -->', '<!-- PRODUCTION');
-			fileContents = fileContents.replace('<!-- /PRODUCTION -->', '/PRODUCTION -->');
-			fileContents = fileContents.replace('<!-- DEV', '<!-- DEV -->');
-			fileContents = fileContents.replace('/DEV -->', '<!-- /DEV -->');
+			fileContents = fileContents.replace(/<!-- PRODUCTION -->/g, '<!-- PRODUCTION');
+			fileContents = fileContents.replace(/<!-- \/PRODUCTION -->/g, '/PRODUCTION -->');
+			fileContents = fileContents.replace(/<!-- DEV/g, '<!-- DEV -->');
+			fileContents = fileContents.replace(/\/DEV -->/g, '<!-- /DEV -->');
 			grunt.file.write(filePath, fileContents);
 		}
 	});
@@ -51,10 +54,10 @@ module.exports = function(grunt){
 
 		if(fileContents.indexOf('<!-- PRODUCTION -->') === -1){
 			grunt.log.error('Changing index.html over to prod resources');
-			fileContents = fileContents.replace('<!-- DEV -->', '<!-- DEV');
-			fileContents = fileContents.replace('<!-- /DEV -->', '/DEV -->');
-			fileContents = fileContents.replace('<!-- PRODUCTION', '<!-- PRODUCTION -->');
-			fileContents = fileContents.replace('/PRODUCTION -->', '<!-- /PRODUCTION -->');
+			fileContents = fileContents.replace(/<!-- DEV -->/g, '<!-- DEV');
+			fileContents = fileContents.replace(/<!-- \/DEV -->/g, '/DEV -->');
+			fileContents = fileContents.replace(/<!-- PRODUCTION/g, '<!-- PRODUCTION -->');
+			fileContents = fileContents.replace(/\/PRODUCTION -->/g, '<!-- /PRODUCTION -->');
 			grunt.file.write(filePath, fileContents);
 		}
 	});
