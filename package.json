@@ -1,7 +1,7 @@
 {
-  "name": "NodifyApp",
+  "name": "SampleApp",
   "version": "0.1.0",
-  "description": "Nodify App",
+  "description": "Sample Ember App",
   "main": "app.js",
   "repository": {
     "type": "git",

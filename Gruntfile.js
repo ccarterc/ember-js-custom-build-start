@@ -14,7 +14,7 @@ module.exports = function(grunt){
 		copy: config('copy'),
 		clean: config('clean'),
 		watch: {
-			files: ['templates/**/*.hbs', 'templates/**/**/*.hbs', 'js/**/*.js', 'css/**/*.css', 'tests/**/*.js'],
+			files: ['templates/**/*.hbs', 'templates/**/**/*.hbs', 'js/**/*.js', 'css/**/*.css', 'tests/**/*.js', 'index.html'],
 			tasks: ['emberTemplates', 'concat', 'cssmin', 'copy', 'changeIndexDev']
 		}
 	});
