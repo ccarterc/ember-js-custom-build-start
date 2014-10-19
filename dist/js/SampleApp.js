@@ -41,3 +41,10 @@ App.HomeRoute = Ember.Route.extend({
 App.HomeSubPageRoute = Ember.Route.extend({});//file names that are seperated with dashes are auto made into Uppercase Routes and Controllers.  You can extend it.
 App.WeirdRoute = Ember.Route.extend({});
 
+
+App.HomeController = Ember.ObjectController.extend({
+
+});
+App.HomeSubPageController = Ember.ObjectController.extend({
+
+});

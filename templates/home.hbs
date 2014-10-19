@@ -1,1 +1,12 @@
-this is home
+<div>this is home</div>
+<div>{{testProp}}</div>
+<div>{{otherProp}}</div>
+<div>
+	{{#each things}}
+		<li>{{this}}</li>
+	{{/each}}
+</div>
+<div>
+	<li>{{#link-to 'weird'}}Other Page{{/link-to}}</li>
+</div>
+{{outlet}}
