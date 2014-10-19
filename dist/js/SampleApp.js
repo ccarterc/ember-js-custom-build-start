@@ -5,15 +5,11 @@ App.Router.map(function() {
   this.resource('home', function(){
 		this.resource('weird', {path: "/home-sub-page"});
   });
+  this.resource('other-page');
 
 });
 //You get a few routes for free: the ApplicationRoute and the IndexRoute (corresponding to the / path), but you can extend them.
 App.IndexRoute = Ember.Route.extend({
-	beforeModel: function(){
-		if(window.location.pathname.indexOf("test") === -1){
-			this.transitionTo('home');
-		}
-	},
   	model: function() {
     	return ['red', 'yellow', 'blue'];
   	}
@@ -43,8 +39,5 @@ App.WeirdRoute = Ember.Route.extend({});
 
 
 App.HomeController = Ember.ObjectController.extend({
-
-});
-App.HomeSubPageController = Ember.ObjectController.extend({
 
 });
