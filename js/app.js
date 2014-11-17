@@ -6,7 +6,7 @@ App.Router.map(function() {
 		this.resource('weird', {path: "/home-sub-page"});
   });
   this.resource('other-page');
-
+  this.resource('scotts-page');
 });
 //You get a few routes for free: the ApplicationRoute and the IndexRoute (corresponding to the / path), but you can extend them.
 App.IndexRoute = Ember.Route.extend({

@@ -21,6 +21,12 @@ function program5(depth0,data) {
   data.buffer.push("Other Page");
   }
 
+function program7(depth0,data) {
+  
+  
+  data.buffer.push("scott's page");
+  }
+
   data.buffer.push("<h1>This is the application stuff</h1>\r\n<div>main app nav is this stuff</div>\r\n\r\n");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "index", options) : helperMissing.call(depth0, "link-to", "index", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
@@ -33,7 +39,10 @@ function program5(depth0,data) {
   data.buffer.push("<br><br><br><br>\r\n\r\n<div class=\"container\">\r\n  ");
   stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\r\n</div>\r\n");
+  data.buffer.push("\r\n</div>\r\n\r\n");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "scotts-page", options) : helperMissing.call(depth0, "link-to", "scotts-page", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("<br>\r\n");
   return buffer;
   
 });
@@ -95,6 +104,16 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
 
   data.buffer.push("other page content");
+  
+});
+
+Ember.TEMPLATES["scotts-page"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
+  data.buffer.push("<style scoped>\r\n\r\n</style>\r\n<button>Environment</button>\r\n<button>Economic</button>\r\n<button>Foreign Policy</button>\r\n<button>Politics</button>");
   
 });
 
